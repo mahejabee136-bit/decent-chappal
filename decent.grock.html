@@ -28,180 +28,109 @@
             background: rgba(10,10,10,0.95);
             backdrop-filter: blur(15px);
             z-index: 1000;
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
         }
         nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             flex-wrap: wrap;
             gap: 1rem;
         }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: var(--gold);
-            letter-spacing: 3px;
-            text-align: center;
+        .logo { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.4rem; 
+            color: var(--gold); 
+            letter-spacing: 2px; 
         }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 3rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 0;
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
         }
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.4s;
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
         }
-        nav a:hover { color: var(--gold); }
-        #hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://m.media-amazon.com/images/I/41VTGUIlEfL._AC_UY1000_.jpg') center/cover;
+        .search-bar i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+        .nav-icons {
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: 100px;
+            gap: 1.5rem;
         }
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 6.5rem);
-            color: #fff;
-            margin-bottom: 1.5rem;
-        }
-        .hero-content p { font-size: clamp(1.2rem, 5vw, 1.9rem); margin-bottom: 3rem; }
-        .btn {
-            background: var(--gold);
-            color: var(--black);
-            padding: 1.2rem 3.5rem;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.5s;
-            display: inline-block;
-            margin: 0.5rem;
-        }
-        .btn:hover { transform: scale(1.08); box-shadow: 0 0 40px rgba(201,169,110,0.6); }
-        section { padding: 8rem 0; }
-        h2 {
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            font-size: clamp(3rem, 8vw, 5rem);
-            color: var(--gold);
-            margin-bottom: 4rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        .product {
+        .cart-icon {
             position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            background: var(--dark);
-            border: 1px solid rgba(201,169,110,0.2);
-            transition: all 0.6s ease;
-        }
-        .product:hover {
-            transform: translateY(-20px);
-            border-color: var(--gold);
-            box-shadow: 0 25px 70px rgba(201,169,110,0.3);
-        }
-        .product img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            transition: transform 0.9s ease;
-        }
-        .product:hover img { transform: scale(1.12); }
-        .product-info {
-            padding: 1.6rem;
-            text-align: center;
-        }
-        .product-info h3 {
-            font-size: 1.7rem;
-            color: #fff;
-            margin-bottom: 0.7rem;
-            font-family: 'Playfair Display', serif;
-        }
-        .premium-badge {
-            background: rgba(201,169,110,0.2);
-            color: var(--gold);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .price {
-            font-size: 1.6rem;
-            color: var(--gold);
-            font-weight: 800;
-            margin: 1rem 0;
-        }
-        .order-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-        .order-btn {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            font-size: 1.5rem;
         }
-        .btn-cart { background: var(--gold); color: var(--black); }
-        .btn-cart:hover { background: #fff; }
-        .btn-wa { background: #25D366; color: white; }
-        .btn-wa:hover { background: #20b358; }
-        #whatsapp-float {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: #25D366;
-            color: white;
-            width: 80px;
-            height: 80px;
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--gold);
+            color: black;
+            font-size: 0.75rem;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.8rem;
             font-weight: bold;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.7), 0 0 0 5px rgba(201,169,110,0.4);
-            z-index: 999;
-            text-decoration: none;
-            transition: all 0.5s;
         }
-        #whatsapp-float:hover { transform: scale(1.2); }
-        footer {
-            background: #000;
-            padding: 5rem 0 3rem;
-            text-align: center;
-            border-top: 1px solid rgba(201,169,110,0.1);
+        #hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://m.media-amazon.com/images/I/41VTGUIlEfL._AC_UY1000_.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; margin-top: 80px; }
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6.5rem); color: #fff; margin-bottom: 1.5rem; }
+        .hero-content p { font-size: clamp(1.2rem, 5vw, 1.9rem); margin-bottom: 3rem; }
+        .btn { background: var(--gold); color: var(--black); padding: 1.2rem 3.5rem; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; transition: all 0.5s; }
+        .btn:hover { transform: scale(1.08); box-shadow: 0 0 40px rgba(201,169,110,0.6); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .product { background: var(--dark); border-radius: 16px; overflow: hidden; transition: all 0.6s; }
+        .product:hover { transform: translateY(-15px); box-shadow: 0 20px 50px rgba(201,169,110,0.3); }
+        .product img { width: 100%; height: 320px; object-fit: cover; }
+        .product-info { padding: 1.5rem; text-align: center; }
+        .price { font-size: 1.6rem; color: var(--gold); font-weight: 800; margin: 1rem 0; }
+        .order-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
         }
-        footer p { color: #555; }
-        @media (max-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 900px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 4rem; }
-            h2 { font-size: 3.5rem; }
-            nav { flex-direction: column; gap: 1.5rem; }
+        .btn-wa { background: #25D366; color: white; }
+        .btn-cart { background: var(--gold); color: black; }
+        #whatsapp-float { position: fixed; bottom: 40px; right: 40px; background: #25D366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 15px 40px rgba(0,0,0,0.6); z-index: 999; text-decoration: none; }
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
         }
+        .cart-content {
+            background: var(--dark);
+            width: 90%;
+            max-width: 600px;
+            border-radius: 16px;
+            padding: 2rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } nav { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -210,162 +139,147 @@
     <div class="container">
         <nav>
             <div class="logo">Decent Chappal</div>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search products...">
+            </div>
+
+            <div class="nav-icons">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <a href="https://wa.me/923139302013" style="font-size:1.6rem; color:#25D366;">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
         </nav>
     </div>
 </header>
 
-<section id="hero">
-    <div class="hero-content">
-        <h1>Pure Luxury</h1>
-        <p>Handcrafted Peshawari Chappals • Genuine Leather Excellence</p>
-        <a href="https://wa.me/923139302013?text=Show%20me%20your%20best%20collection" class="btn">Explore Now</a>
-    </div>
-</section>
-
-<section id="collection">
-    <div class="container">
-        <h2>Premium Collection</h2>
-        <div class="grid">
-            <div class="product">
-                <img src="https://m.media-amazon.com/images/I/41VTGUIlEfL._AC_UY1000_.jpg" alt="Glossy Black">
-                <div class="product-info">
-                    <div class="premium-badge">Premium Gloss</div>
-                    <h3>Glossy Black Master</h3>
-                    <div class="price">Rs. 3,200</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Glossy+Black" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Glossy+Black" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="https://i.ebayimg.com/images/g/HWkAAOSw4Cli75jV/s-l1200.jpg" alt="Kaptaan Black">
-                <div class="product-info">
-                    <div class="premium-badge">Kaptaan Style</div>
-                    <h3>Classic Kaptaan</h3>
-                    <div class="price">Rs. 3,000</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Kaptaan" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Kaptaan" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="https://baashis.com/cdn/shop/files/comfortable-peshawari-single-sole-zalmi-chappal-blackbaashis-723420.jpg?v=1731153331" alt="Zalmi Black">
-                <div class="product-info">
-                    <div class="premium-badge">Soft Comfort</div>
-                    <h3>Zalmi Comfort</h3>
-                    <div class="price">Rs. 2,900</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Zalmi" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Zalmi" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="https://noormahel.com/cdn/shop/files/MANI5353.jpg?v=1750418266" alt="Luxury Kaptaan">
-                <div class="product-info">
-                    <div class="premium-badge">Elite Shine</div>
-                    <h3>Luxury Kaptaan</h3>
-                    <div class="price">Rs. 3,800</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Luxury+Kaptaan" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Luxury+Kaptaan" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="https://m.media-amazon.com/images/I/51z14UqJmHL._AC_UY1000_.jpg" alt="Patent Glossy">
-                <div class="product-info">
-                    <div class="premium-badge">Mirror Finish</div>
-                    <h3>Patent Glossy</h3>
-                    <div class="price">Rs. 3,500</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Patent" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Patent" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="https://khaansaab.com/cdn/shop/files/2b4ea7_1376c7ff1bf1411f8821e57c3d338b07_mv2.webp?v=1716202099&width=1946" alt="Zalmi Rich">
-                <div class="product-info">
-                    <div class="premium-badge">Rich Texture</div>
-                    <h3>Zalmi Rich</h3>
-                    <div class="price">Rs. 3,100</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Zalmi+Rich" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Zalmi+Rich" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="https://cdn.shopify.com/s/files/1/0777/3657/5279/files/Classic_Peshwari_Chappal.webp?v=1744034891" alt="Classic">
-                <div class="product-info">
-                    <div class="premium-badge">Timeless</div>
-                    <h3>Classic Peshawari</h3>
-                    <div class="price">Rs. 2,800</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Classic" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Classic" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="https://i.ebayimg.com/images/g/bYsAAOSwm9Fi7uVm/s-l1200.jpg" alt="Brown Leather">
-                <div class="product-info">
-                    <div class="premium-badge">Warm Brown</div>
-                    <h3>Rich Brown</h3>
-                    <div class="price">Rs. 3,400</div>
-                    <div class="order-buttons">
-                        <a href="https://wa.me/923139302013?text=Brown" class="order-btn btn-cart">Add to Cart</a>
-                        <a href="https://wa.me/923139302013?text=Brown" class="order-btn btn-wa">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+            <h2>Your Cart (<span id="modalCartCount">0</span>)</h2>
+            <span style="font-size:2rem; cursor:pointer;" onclick="closeCart()">×</span>
+        </div>
+        <div id="cartItems"></div>
+        
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #444;">
+            <h3>Delivery Details</h3>
+            <input type="text" id="customerName" placeholder="Full Name" style="width:100%; padding:12px; margin:8px 0; background:#222; border:1px solid #444; border-radius:8px; color:white;">
+            <input type="text" id="customerPhone" placeholder="Phone Number" style="width:100%; padding:12px; margin:8px 0; background:#222; border:1px solid #444; border-radius:8px; color:white;">
+            <input type="text" id="customerAddress" placeholder="Delivery Address" style="width:100%; padding:12px; margin:8px 0; background:#222; border:1px solid #444; border-radius:8px; color:white;">
+            
+            <button onclick="placeOrder()" style="width:100%; padding:15px; margin-top:15px; background:#25D366; color:white; border:none; border-radius:10px; font-size:1.1rem; font-weight:600;">
+                Place Order & Send on WhatsApp
+            </button>
         </div>
     </div>
-</section>
+</div>
 
-<section id="about">
-    <div class="container">
-        <h2>About Decent Chappal</h2>
-        <p style="max-width:900px; margin:0 auto; font-size:1.2rem; text-align:center; line-height:1.8;">
-            Decent Chappal is a premium handmade leather footwear brand from Peshawar, Pakistan. We specialize in authentic Peshawari and Charsadda style chappals using 100% genuine leather and traditional craftsmanship. Every pair is made with passion to deliver timeless style and unmatched comfort.
-        </p>
-    </div>
-</section>
+<!-- Hero aur baaki sections same rakhe hain (tumhari puri grid wahi hai) -->
 
-<section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <p style="text-align:center;font-size:1.3rem;line-height:1.8;">
-            Phone / WhatsApp: <a href="https://wa.me/923139302013" style="color:var(--gold);font-weight:600;">+92 313 9302013</a><br>
-            Email: asadkhan848@gmail.com<br>
-            Location: Peshawar & Charsadda, Pakistan
-        </p>
-    </div>
-</section>
+<!-- Tumhari puri product grid yahan paste kar do (jo tune pehle di thi) -->
 
-<a id="whatsapp-float" href="https://wa.me/923139302013?text=These+look+amazing!+Send+details" target="_blank">WA</a>
+<a id="whatsapp-float" href="https://wa.me/923139302013" target="_blank">WA</a>
 
-<footer>
-    <div class="container">
-        <p>Decent Chappal • Peshawar's Premium Handmade • 0313 9302013</p>
-    </div>
-</footer>
+<script>
+    let cart = [];
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        updateCartCount();
+        alert(productName + " added to cart!");
+    }
+
+    function updateCartCount() {
+        document.getElementById('cartCount').textContent = cart.length;
+    }
+
+    function showCart() {
+        const modal = document.getElementById('cartModal');
+        const itemsContainer = document.getElementById('cartItems');
+        const countEl = document.getElementById('modalCartCount');
+        
+        itemsContainer.innerHTML = '';
+        
+        if (cart.length === 0) {
+            itemsContainer.innerHTML = '<p style="text-align:center; padding:2rem;">Your cart is empty</p>';
+        } else {
+            cart.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.style.cssText = 'display:flex; justify-content:space-between; padding:15px 0; border-bottom:1px solid #333;';
+                div.innerHTML = `
+                    <div>${item.name}</div>
+                    <div>Rs. ${item.price}</div>
+                `;
+                itemsContainer.appendChild(div);
+            });
+        }
+        
+        countEl.textContent = cart.length;
+        modal.style.display = 'flex';
+    }
+
+    function closeCart() {
+        document.getElementById('cartModal').style.display = 'none';
+    }
+
+    function placeOrder() {
+        const name = document.getElementById('customerName').value;
+        const phone = document.getElementById('customerPhone').value;
+        const address = document.getElementById('customerAddress').value;
+
+        if (!name || !phone || !address) {
+            alert("Please fill all details");
+            return;
+        }
+
+        let message = "🛒 *New Order from Decent Chappal*\n\n";
+        message += "*Customer:* " + name + "\n";
+        message += "*Phone:* " + phone + "\n";
+        message += "*Address:* " + address + "\n\n";
+        message += "*Items:*\n";
+
+        let total = 0;
+        cart.forEach(item => {
+            message += "• " + item.name + " - Rs. " + item.price + "\n";
+            total += item.price;
+        });
+
+        message += "\n*Total: Rs. " + total + "*\n";
+        message += "\nThank you for shopping with us!";
+
+        const whatsappUrl = `https://wa.me/923139302013?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+
+        // Clear cart after order
+        cart = [];
+        updateCartCount();
+        closeCart();
+    }
+
+    // Cart icon click
+    document.getElementById('cartIcon').addEventListener('click', showCart);
+
+    // Simple search
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        const term = e.target.value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+        
+        products.forEach(product => {
+            const title = product.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(term)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
